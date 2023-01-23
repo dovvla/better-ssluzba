@@ -37,10 +37,10 @@ func CreateStudent(c *gin.Context) {
 	}
 	student := models.Student{Ime: input.Ime, Prezime: input.Prezime, JMBG: input.JMBG}
 	if err := models.DB.Where("jmbg = ?", input.JMBG).First(&student).Error; err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "Student sa datim jmbg-om vec postoji"})
+		models.DB.Create(&student)
+		c.JSON(http.StatusOK, gin.H{"data": student})
 		return
 	}
 
-	models.DB.Create(&student)
-	c.JSON(http.StatusOK, gin.H{"data": student})
+	c.JSON(http.StatusBadRequest, gin.H{"error": "Student sa datim jmbg-om vec postoji"})
 }

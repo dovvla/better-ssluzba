@@ -37,10 +37,10 @@ func CreateProfesor(c *gin.Context) {
 	}
 	profesor := models.Profesor{Ime: input.Ime, Prezime: input.Prezime, JMBG: input.JMBG}
 	if err := models.DB.Where("jmbg = ?", input.JMBG).First(&profesor).Error; err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "Profesor sa datim jmbg-om vec postoji"})
+		models.DB.Create(&profesor)
+		c.JSON(http.StatusOK, gin.H{"data": profesor})
 		return
 	}
 
-	models.DB.Create(&profesor)
-	c.JSON(http.StatusOK, gin.H{"data": profesor})
+	c.JSON(http.StatusBadRequest, gin.H{"error": "Profesor sa datim jmbg-om vec postoji"})
 }
