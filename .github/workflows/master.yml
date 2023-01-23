@@ -26,4 +26,4 @@ jobs:
           context: ./ssluzba_uns/
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/betterssluzbauns:$IMAGE_TAG
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/betterssluzbauns:latest
