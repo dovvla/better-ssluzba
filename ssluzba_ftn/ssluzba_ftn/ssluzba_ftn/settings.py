@@ -29,7 +29,7 @@ SECRET_KEY = "django-insecure-e7v&q(h)(0ug_4e*cw7=$$7w+f!pmf$1u)x0294fjb4@w3d2ww
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["0.0.0.0"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -133,7 +133,7 @@ SSLUZBA_UNS_URL = env("SSLUZBA_UNS_URL", default="http://localhost:8080")
 
 
 # Actual directory user files go to
-MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "mediafiles")
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "ssluzba_ftn/mediafiles")
 
 # URL used to access the media
 MEDIA_URL = "/media/"
