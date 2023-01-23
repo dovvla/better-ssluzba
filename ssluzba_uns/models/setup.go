@@ -15,7 +15,7 @@ func ConnectDatabase() {
 		panic("Failed to connect to database!")
 	}
 
-	err = database.AutoMigrate(&Student{}, &Profesor{})
+	err = database.AutoMigrate(&Student{}, &Profesor{}, &Request{})
 
 	if err != nil {
 		return
