@@ -6,7 +6,7 @@ on:
       - "master"
 
 jobs:
-  build:
+  build-and-push-uns:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -25,4 +25,4 @@ jobs:
         with:
           context: ./ssluzba_uns/
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/betterssluzbauns:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/betterssluzbauns:${{ github.sha }}
