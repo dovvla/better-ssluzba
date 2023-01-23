@@ -24,6 +24,5 @@ jobs:
           IMAGE_TAG: ${{ github.sha }}
         with:
           context: ./ssluzba_uns/
-          file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/betterssluzbauns:latest
