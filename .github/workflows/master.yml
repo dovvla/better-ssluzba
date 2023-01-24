@@ -45,5 +45,5 @@ jobs:
         with:
           context: ./ssluzba_ftn/ssluzba_ftn/
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/betterssluzbauns:${{ github.sha }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/betterssluzbaftn:${{ github.sha }}
 
