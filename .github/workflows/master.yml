@@ -25,7 +25,7 @@ jobs:
         with:
           context: ./ssluzba_uns/
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/betterssluzbauns:${{ github.sha }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/betterssluzbauns
   build-and-push-ftn:
     runs-on: ubuntu-latest
     steps:
@@ -45,7 +45,7 @@ jobs:
         with:
           context: ./ssluzba_ftn/ssluzba_ftn/
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/betterssluzbaftn:${{ github.sha }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/betterssluzbaftn
   build-and-push-pmf:
     runs-on: ubuntu-latest
     steps:
@@ -65,7 +65,7 @@ jobs:
         with:
           context: ./ssluzba_pmf/ssluzba_pmf/
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/betterssluzbapmf:${{ github.sha }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/betterssluzbapmf
   build-and-push-pravni:
     runs-on: ubuntu-latest
     steps:
@@ -85,4 +85,4 @@ jobs:
         with:
           context: ./ssluzba_pravni/ssluzba_pravni/
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/betterssluzbapravni:${{ github.sha }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/betterssluzbapravni
