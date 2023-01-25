@@ -7,7 +7,25 @@ services:
     image: dovvla/betterssluzbauns
     ports:
       - "8082:8080"
-  nginx:
+  ssluzbapmf:
+    image: dovvla/betterssluzbapmf
+    environment:
+      - SSLUZBA_UNS_URL=http://ssluzbauns
+    ports:
+      - "8001:8000"
+  ssluzbaftn:
+    image: dovvla/betterssluzbaftn
+    environment:
+      - SSLUZBA_UNS_URL=http://ssluzbauns
+    ports:
+      - "8002:8000"
+  ssluzbapravni:
+    image: dovvla/betterssluzbapravni
+    environment:
+      - SSLUZBA_UNS_URL=http://ssluzbauns
+    ports:
+      - "8003:8000"
+  ssluzbauns:
     image: nginx:latest
     volumes:
       - ./nginx:/etc/nginx/conf.d
