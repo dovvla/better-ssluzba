@@ -12,7 +12,7 @@ services:
     environment:
       - SSLUZBA_UNS_URL=http://ssluzbauns
     volumes:
-      -./media_pmf:/usr/src/app/ssluzba_pmf/mediafiles:ro
+      - ./media_pmf:/usr/src/app/ssluzba_pmf/mediafiles:ro
     ports:
       - "8001:8000"
   ssluzbaftn:
@@ -20,7 +20,7 @@ services:
     environment:
       - SSLUZBA_UNS_URL=http://ssluzbauns
     volumes:
-      -./media_ftn:/usr/src/app/ssluzba_ftn/mediafiles:ro
+      - ./media_ftn:/usr/src/app/ssluzba_ftn/mediafiles:ro
     ports:
       - "8002:8000"
   ssluzbapravni:
@@ -28,7 +28,7 @@ services:
     environment:
       - SSLUZBA_UNS_URL=http://ssluzbauns
     volumes:
-      -./media_pravni:/usr/src/app/ssluzba_pravni/mediafiles:ro
+      - ./media_pravni:/usr/src/app/ssluzba_pravni/mediafiles:ro
     ports:
       - "8003:8000"
   ssluzbauns:
