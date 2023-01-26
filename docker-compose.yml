@@ -8,21 +8,27 @@ services:
     ports:
       - "8082:8080"
   ssluzbapmf:
-    image: dovvla/betterssluzbapmf
+    image: dovvla/betterssluzbapmf:current
     environment:
       - SSLUZBA_UNS_URL=http://ssluzbauns
+    volumes:
+      -./media_pmf:/usr/src/app/ssluzba_pmf/mediafiles:ro
     ports:
       - "8001:8000"
   ssluzbaftn:
-    image: dovvla/betterssluzbaftn
+    image: dovvla/betterssluzbaftn:current
     environment:
       - SSLUZBA_UNS_URL=http://ssluzbauns
+    volumes:
+      -./media_ftn:/usr/src/app/ssluzba_ftn/mediafiles:ro
     ports:
       - "8002:8000"
   ssluzbapravni:
-    image: dovvla/betterssluzbapravni
+    image: dovvla/betterssluzbapravni:current
     environment:
       - SSLUZBA_UNS_URL=http://ssluzbauns
+    volumes:
+      -./media_pravni:/usr/src/app/ssluzba_pravni/mediafiles:ro
     ports:
       - "8003:8000"
   ssluzbauns:
